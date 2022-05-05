@@ -28,20 +28,17 @@ public class PhonebookServiceImpl implements PhonebookService {
 
     @Override
     public Person findById(Long id) {
-        Optional<Person> personOptional = phonebookRepository.findById(id);
-        return personOptional.get();
+        return phonebookRepository.findById(id).orElseThrow();
     }
 
     @Override
     public Person findByFirstName(String firstName) {
-        Optional<Person> optionalPerson = phonebookRepository.findByFirstName(firstName);
-        return optionalPerson.get();
+        return phonebookRepository.findByFirstName(firstName).orElseThrow();
     }
 
     @Override
     public Person findByLastName(String lastName) {
-        Optional<Person> optionalPerson = phonebookRepository.findByLastName(lastName);
-        return optionalPerson.get();
+        return phonebookRepository.findByLastName(lastName).orElseThrow();
     }
 
     @Override
