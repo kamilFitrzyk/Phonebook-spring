@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--/*@thymesVar id="contact" type="com.phonebook.model.Person"*/-->
+<table style="border: 1px solid;">
+<thead class="">
+  <th>Id</th>
+  <th>FirstName</th>
+  <th>LastName</th>
+  <th>Address</th>
+  <th>Number</th>
+</thead>
+  <tbody>
+  <tr th:each="contact : ${phonebook}">
+    <td th:text="${contact?.id}">1</td>
+    <td th:text="${contact?.firstName}">Joe</td>
+    <td th:text="${contact?.lastName}">Buck</td>
+    <td th:text="${contact?.address}">Buck</td>
+    <td th:text="${contact?.number}">Buck</td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

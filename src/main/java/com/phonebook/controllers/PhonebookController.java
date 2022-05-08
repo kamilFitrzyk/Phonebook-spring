@@ -1,8 +1,12 @@
 package com.phonebook.controllers;
 
+import com.phonebook.model.Person;
 import com.phonebook.service.PhonebookService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 @Controller
 public class PhonebookController {
@@ -14,9 +18,13 @@ public class PhonebookController {
     }
 
     @GetMapping({"/phonebook"})
-    public String getPhonebook() {
+    public String getPhonebook(Model model) {
+        model.addAttribute("phonebook", phonebookService.getPeople());
 
-        phonebookService.getPeople();
         return "phonebook";
     }
+
+
+
+
 }

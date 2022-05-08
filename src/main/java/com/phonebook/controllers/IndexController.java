@@ -19,10 +19,6 @@ public class IndexController {
     @GetMapping({"","/","/index"})
     public String getIndexPage(Model model){
 
-        Person person = phonebookService.savePerson(Person.builder().id(1L).firstName("ads").build());
-
-        Person byId = phonebookService.findById(1L);
-        System.out.println(byId);
         return "index";
     }
 
